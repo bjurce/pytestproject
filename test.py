@@ -72,10 +72,20 @@ def update_output(start_date, end_date):
         return 'Select a date to see it displayed here'
     else:
         return string_prefix
-
+#checkbox group component
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+dcc.Checklist(
+    options=[
+        {'label': 'New York City', 'value': 'NYC'},
+        {'label': 'Montréal', 'value': 'MTL'},
+        {'label': 'San Francisco', 'value': 'SF'}
+    ],
+    values=['MTL', 'SF']
+)
+    
 #Add the CSS Stylesheet
 app.css.append_css({'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'})
 
